@@ -65,4 +65,14 @@ MoneyTest::testAdd()
   CPPUNIT_ASSERT( &money == &(money += money12FF) );  // add returns ref. on 'this'.
 }
 
+void 
+MoneyTest::testAddThrow()
+{
+  // Set up
+  const Money money123FF( 123, "FF" );
+
+  // Process
+  Money money( 123, "USD" );
+  money += money123FF;        // should throw an exception
+}
 

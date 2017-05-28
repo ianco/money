@@ -2,6 +2,15 @@
 #define MONEY_H
 
 #include <string>
+#include <stdexcept>
+
+class IncompatibleMoneyError : public std::runtime_error
+{
+public:
+  IncompatibleMoneyError() : runtime_error( "Incompatible moneys" )
+  {
+  }
+};
 
 class Money
 {
@@ -35,6 +44,9 @@ public:
 
   Money &operator +=( const Money &other )
   {
+    if ( m_currency != other.m_currency )
+      throw IncompatibleMoneyError();
+
     m_amount += other.m_amount;
     return *this;
   }
