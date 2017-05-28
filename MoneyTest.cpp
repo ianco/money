@@ -33,3 +33,36 @@ MoneyTest::testConstructor()
   CPPUNIT_ASSERT_EQUAL( currencyFF, money.getCurrency() );
 }
 
+void
+MoneyTest::testEqual()
+{
+  // Set up
+  const Money money123FF( 123, "FF" );
+  const Money money123USD( 123, "USD" );
+  const Money money12FF( 12, "FF" );
+  const Money money12USD( 12, "USD" );
+
+  // Process & Check
+  CPPUNIT_ASSERT( money123FF == money123FF );     // ==
+  CPPUNIT_ASSERT( money12FF != money123FF );      // != amount
+  CPPUNIT_ASSERT( money123USD != money123FF );    // != currency
+  CPPUNIT_ASSERT( money12USD != money123FF );     // != currency and != amount
+}
+
+void 
+MoneyTest::testAdd()
+{
+  // Set up
+  const Money money12FF( 12, "FF" );
+  const Money expectedMoney( 135, "FF" );
+
+  // Process
+  Money money( 123, "FF" );
+  money += money12FF;
+
+  // Check
+  CPPUNIT_ASSERT( expectedMoney == money );           // add works
+  CPPUNIT_ASSERT( &money == &(money += money12FF) );  // add returns ref. on 'this'.
+}
+
+

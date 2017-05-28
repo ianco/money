@@ -22,6 +22,23 @@ public:
     return m_currency;
   }
 
+  bool operator ==( const Money &other ) const
+  {
+    return m_amount == other.m_amount  &&  
+           m_currency == other.m_currency;
+  }
+
+  bool operator !=( const Money &other ) const
+  {
+    return !(*this == other);
+  }
+
+  Money &operator +=( const Money &other )
+  {
+    m_amount += other.m_amount;
+    return *this;
+  }
+
 private:
   double m_amount;
   std::string m_currency;

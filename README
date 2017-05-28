@@ -1,0 +1,7 @@
+sudo apt-get install libcppunit-dev libcppunit-doc
+aclocal -I /usr/local/share/aclocal
+autoconf
+automake -a
+./configure
+make check
+

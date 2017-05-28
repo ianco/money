@@ -7,6 +7,8 @@ class MoneyTest : public CppUnit::TestFixture
 {
   CPPUNIT_TEST_SUITE( MoneyTest );
   CPPUNIT_TEST( testConstructor );
+  CPPUNIT_TEST( testEqual );
+  CPPUNIT_TEST( testAdd );
   CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -14,6 +16,8 @@ public:
   void tearDown();
 
   void testConstructor();
+  void testEqual();
+  void testAdd();
 };
 
 #endif  // MONEYTEST_H
