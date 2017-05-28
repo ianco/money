@@ -1,0 +1,21 @@
+.deps
+Makefile
+Makefile.in
+MoneyApp
+MoneyApp-MoneyApp.o
+MoneyApp-MoneyTest.o
+MoneyApp.log
+MoneyApp.trs
+aclocal.m4
+autom4te.cache/
+compile
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+test-driver
+*.log
+
+nothing added to commit but untracked files present (use "git add" to track)
