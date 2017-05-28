@@ -2,14 +2,11 @@
 Makefile
 Makefile.in
 MoneyApp
-MoneyApp-MoneyApp.o
-MoneyApp-MoneyTest.o
-MoneyApp.log
-MoneyApp.trs
+*.o
+*.trs
 aclocal.m4
-autom4te.cache/
+autom4te.cache
 compile
-config.log
 config.status
 configure
 depcomp
